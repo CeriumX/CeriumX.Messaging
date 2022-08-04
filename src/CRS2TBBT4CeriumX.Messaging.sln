@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{E6C50822-3F95-415E-B6C8-32E5B193DF97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Messaging.Bootstrapper", "samples\CeriumX.Messaging.Bootstrapper\src\CeriumX.Messaging.Bootstrapper.csproj", "{41254AF0-6F82-4FB2-B5BE-40E4CDB743A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Messaging.Abstractions", "CeriumX.Messaging.Abstractions\src\CeriumX.Messaging.Abstractions.csproj", "{8CA12832-4FF9-43E4-A1CC-9E800E81F167}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceBus", "ServiceBus", "{FA7AD897-A251-451E-A63E-262E08F332F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Messaging.ServiceBus", "ServiceBus\CeriumX.Messaging.ServiceBus\src\CeriumX.Messaging.ServiceBus.csproj", "{FC31D087-9C02-4BB1-82D7-A6EE1F34F970}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LocalMQ", "LocalMQ", "{7061240F-3A05-425F-9F2F-26C6009B9FA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Messaging.LocalMQ", "LocalMQ\CeriumX.Messaging.LocalMQ\src\CeriumX.Messaging.LocalMQ.csproj", "{32B35DC1-50FF-4E68-BD6F-48E192E5D980}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Messaging.LocalMQPlus", "LocalMQ\CeriumX.Messaging.LocalMQPlus\src\CeriumX.Messaging.LocalMQPlus.csproj", "{8158A737-858B-4CB3-B910-25511736E390}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MQTT", "MQTT", "{15103956-DDF4-41B3-9E96-F0699B255B47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Messaging.MQTT", "MQTT\CeriumX.Messaging.MQTT\src\CeriumX.Messaging.MQTT.csproj", "{F4E257E3-9CA6-4258-83C4-D50260DA1055}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{0C52370C-87B4-4AE2-9DE3-66EC9DD993E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Messaging.RabbitMQ", "RabbitMQ\CeriumX.Messaging.RabbitMQ\src\CeriumX.Messaging.RabbitMQ.csproj", "{E97CC488-BF6D-4A9D-93BF-4A98B695E17A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kafka", "Kafka", "{71A71276-9428-4153-898C-7FA9F6A3CCFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CeriumX.Messaging.Kafka", "Kafka\CeriumX.Messaging.Kafka\src\CeriumX.Messaging.Kafka.csproj", "{EEBC6534-C8EC-4AD6-AD39-B399D6D4EFE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41254AF0-6F82-4FB2-B5BE-40E4CDB743A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41254AF0-6F82-4FB2-B5BE-40E4CDB743A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41254AF0-6F82-4FB2-B5BE-40E4CDB743A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41254AF0-6F82-4FB2-B5BE-40E4CDB743A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA12832-4FF9-43E4-A1CC-9E800E81F167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA12832-4FF9-43E4-A1CC-9E800E81F167}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA12832-4FF9-43E4-A1CC-9E800E81F167}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA12832-4FF9-43E4-A1CC-9E800E81F167}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC31D087-9C02-4BB1-82D7-A6EE1F34F970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC31D087-9C02-4BB1-82D7-A6EE1F34F970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC31D087-9C02-4BB1-82D7-A6EE1F34F970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC31D087-9C02-4BB1-82D7-A6EE1F34F970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32B35DC1-50FF-4E68-BD6F-48E192E5D980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32B35DC1-50FF-4E68-BD6F-48E192E5D980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32B35DC1-50FF-4E68-BD6F-48E192E5D980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32B35DC1-50FF-4E68-BD6F-48E192E5D980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8158A737-858B-4CB3-B910-25511736E390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8158A737-858B-4CB3-B910-25511736E390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8158A737-858B-4CB3-B910-25511736E390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8158A737-858B-4CB3-B910-25511736E390}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4E257E3-9CA6-4258-83C4-D50260DA1055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4E257E3-9CA6-4258-83C4-D50260DA1055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4E257E3-9CA6-4258-83C4-D50260DA1055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4E257E3-9CA6-4258-83C4-D50260DA1055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E97CC488-BF6D-4A9D-93BF-4A98B695E17A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97CC488-BF6D-4A9D-93BF-4A98B695E17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97CC488-BF6D-4A9D-93BF-4A98B695E17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97CC488-BF6D-4A9D-93BF-4A98B695E17A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEBC6534-C8EC-4AD6-AD39-B399D6D4EFE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEBC6534-C8EC-4AD6-AD39-B399D6D4EFE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEBC6534-C8EC-4AD6-AD39-B399D6D4EFE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEBC6534-C8EC-4AD6-AD39-B399D6D4EFE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{41254AF0-6F82-4FB2-B5BE-40E4CDB743A1} = {E6C50822-3F95-415E-B6C8-32E5B193DF97}
+		{FC31D087-9C02-4BB1-82D7-A6EE1F34F970} = {FA7AD897-A251-451E-A63E-262E08F332F7}
+		{32B35DC1-50FF-4E68-BD6F-48E192E5D980} = {7061240F-3A05-425F-9F2F-26C6009B9FA0}
+		{8158A737-858B-4CB3-B910-25511736E390} = {7061240F-3A05-425F-9F2F-26C6009B9FA0}
+		{F4E257E3-9CA6-4258-83C4-D50260DA1055} = {15103956-DDF4-41B3-9E96-F0699B255B47}
+		{E97CC488-BF6D-4A9D-93BF-4A98B695E17A} = {0C52370C-87B4-4AE2-9DE3-66EC9DD993E8}
+		{EEBC6534-C8EC-4AD6-AD39-B399D6D4EFE7} = {71A71276-9428-4153-898C-7FA9F6A3CCFB}
+	EndGlobalSection
+EndGlobal
