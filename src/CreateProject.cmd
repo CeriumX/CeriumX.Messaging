@@ -21,10 +21,16 @@ dotnet new sln -n CRS2TBBT4CeriumX.Messaging
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- 引导程序 & Bootstrapper 1 ----------
+@echo\&echo  ---------- 示例程序 & samples 3 ----------
 
 dotnet new console -lang C# -f net6.0 -n CeriumX.Messaging.Bootstrapper -o samples/CeriumX.Messaging.Bootstrapper/src
 dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s samples samples/CeriumX.Messaging.Bootstrapper/src
+
+dotnet new blazorserver -lang C# -f net6.0 -n CeriumX.Messaging.Appx4BlazorServer -o samples/CeriumX.Messaging.Appx4BlazorServer/src
+dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s samples samples/CeriumX.Messaging.Appx4BlazorServer/src
+
+dotnet new blazorwasm -lang C# -f net6.0 -n CeriumX.Messaging.Appx4BlazorWasm -o samples/CeriumX.Messaging.Appx4BlazorWasm/src
+dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s samples samples/CeriumX.Messaging.Appx4BlazorWasm/src
 
 
 
