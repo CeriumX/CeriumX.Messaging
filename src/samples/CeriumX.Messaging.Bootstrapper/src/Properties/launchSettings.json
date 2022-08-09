@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CeriumX.Messaging.Bootstrapper": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
