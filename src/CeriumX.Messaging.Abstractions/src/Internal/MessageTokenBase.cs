@@ -18,8 +18,6 @@
 // 修改人员：
 // 修改内容：
 // ========================================================================
-using GSA.ToolKits.CommonUtility;
-
 namespace CeriumX.Messaging.Abstractions;
 
 /// <summary>
