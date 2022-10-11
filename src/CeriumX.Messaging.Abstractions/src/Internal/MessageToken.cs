@@ -37,7 +37,7 @@ internal sealed class MessageToken<TMessage> : MessageTokenBase
     /// <summary>
     /// 消息反订阅回调函数
     /// </summary>
-    private readonly Func<IMessageToken, Task> _unsubscribeCallback;
+    private readonly Func<IMessageToken, ValueTask> _unsubscribeCallback;
 
 
     /// <summary>
@@ -46,7 +46,7 @@ internal sealed class MessageToken<TMessage> : MessageTokenBase
     /// <param name="topic">消息主题</param>
     /// <param name="messageHandler">消息接收处理事件</param>
     /// <param name="unsubscribeCallback">消息反订阅回调函数</param>
-    internal MessageToken(string topic, IMessageHandler<TMessage> messageHandler, Func<IMessageToken, Task> unsubscribeCallback)
+    internal MessageToken(string topic, IMessageHandler<TMessage> messageHandler, Func<IMessageToken, ValueTask> unsubscribeCallback)
         : base(topic)
     {
         _messageHandler = messageHandler;

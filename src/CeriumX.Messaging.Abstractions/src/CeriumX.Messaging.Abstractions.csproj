@@ -42,7 +42,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>Messaging MessageQueue 消息队列 消息队列服务 LocalMQ MQTT RabbitMQ Kafka ActiveMQ ZeroMQ ServiceBus</PackageTags>
-		<PackageReleaseNotes>完善类库基础信息和打包信息的配置等。</PackageReleaseNotes>
+		<PackageReleaseNotes>暂无发布日志。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.Messaging.Abstractions</PackageId>-->
 	</PropertyGroup>
@@ -72,6 +72,10 @@
 		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+		<InternalsVisibleTo Include="CeriumX.Messaging.LocalMQ, PublicKey=0024000004800000140200000602000000240000525341310010000001000100bd6032f64108f644bb67c71cd1e7107dfa26f4be061d3c31b79e7153ef7f951f94bae27e1408d501e49e5df7a3a76bc8bfba2110299b288e5a1920a86b63961415575b1a452e7df8fdcf079c4e298b0da63d91df905049b82a33baae88124db84a9e7e507984dc32dd12edf84635d8e1917223d695fe742206d6c4629c179d6d09cb5787336052ef7bf27cd3fbdccdfe4c8cbfbbe308edab85d138ae47a76dbacea646920d27d2c1d8ea288e410038fa6bee454b43d0efbe06da59cb17b108b2c7253879099f04d3b22067f541df0214f00af18a6521657df03257f74947c96bdf1b5eb04cf864dbedf79d8d0c8f7d66cd3e5916cf96af6c38701ae9a480e27848fbe43101129c628017dde882f8abe00c2f30ee9bf3d062667110df2d4bf58da9c746e063726c91f0398db523844213e5bf0394500101f47454197cef3d4f542626daa5e15745ff91f89d1669d7ad83b96a17c408b0d09572d20bcec9105888cdec64e7c33d80dad2765c1c2669914bf196015d8fa2191567ff4da3065cd2a579f2ba4fb88f34b59a45436b355291bff0eb08d09adaf12f7672cb9bb20d6fdac3006fbadee7cbf70986ab63c321702c2acd344356aa426bde787aa5b7697c1628555f4076b67e433e1981cb70d3605f39a2badc359ae71d59d2309680c3c51500c0025971a4aedca782034d242b10567e127f835618dd4c5b968ebc49c168ac" />
+	</ItemGroup>
+	
 	<ItemGroup>
 		<PackageReference Include="CommonsUtility" Version="6.5.0" />
 	</ItemGroup>

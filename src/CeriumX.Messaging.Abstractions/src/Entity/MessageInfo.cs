@@ -25,30 +25,30 @@ namespace CeriumX.Messaging.Abstractions;
 /// </summary>
 /// <remarks>仅用于各功能实现中应用</remarks>
 [Serializable]
-public sealed class MessageInfo
+internal sealed class MessageInfo
 {
     /// <summary>
     /// 内部消息流转实体类
     /// </summary>
     /// <param name="topic">消息主题</param>
-    public MessageInfo(string topic) => Topic = topic;
+    internal MessageInfo(string topic) => Topic = topic;
 
 
     /// <summary>
     /// 消息主题
     /// </summary>
-    public string Topic { get; }
+    internal string Topic { get; }
 
     /// <summary>
     /// 需要投递的消息
     /// </summary>
-    public byte[]? DispatchMessage { get; set; }
+    internal byte[]? DispatchMessage { get; set; }
 
     /// <summary>
     /// 需要投递的对象
     /// </summary>
     /// <remarks>NOTE：仅限LocalMQ支持。</remarks>
-    public IMessageObjectData? DispatchObject { get; set; }
+    internal IMessageObjectData? DispatchObject { get; set; }
 
 
     /// <summary>
@@ -57,7 +57,7 @@ public sealed class MessageInfo
     /// <param name="topic">消息主题</param>
     /// <param name="dispatchMessage">需要投递的消息</param>
     /// <returns>内部消息流转实体</returns>
-    public static MessageInfo Create(string topic, byte[] dispatchMessage)
+    internal static MessageInfo Create(string topic, byte[] dispatchMessage)
     {
         return new MessageInfo(topic)
         {
@@ -72,7 +72,7 @@ public sealed class MessageInfo
     /// <param name="topic">消息主题</param>
     /// <param name="dispatchObject">需要投递的对象</param>
     /// <returns>内部消息流转实体</returns>
-    public static MessageInfo Create(string topic, IMessageObjectData? dispatchObject)
+    internal static MessageInfo Create(string topic, IMessageObjectData? dispatchObject)
     {
         return new MessageInfo(topic)
         {

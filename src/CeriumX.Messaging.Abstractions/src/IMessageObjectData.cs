@@ -29,5 +29,5 @@ public interface IMessageObjectData
     /// <summary>
     /// 资源释放通知令牌
     /// </summary>
-    public CancellationToken? ReleaseNoticeToken { get; }
+    CancellationToken? ReleaseNoticeToken { get; }
 }
