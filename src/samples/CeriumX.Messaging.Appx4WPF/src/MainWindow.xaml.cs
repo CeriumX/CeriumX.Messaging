@@ -73,29 +73,29 @@ public partial class MainWindow : Window
             return;
         }
 
-        //Views.LocalObjectWindow1 window1 = new(_service)
-        //{
-        //    Owner = this
-        //};
-        //window1.Show();
+        Views.LocalObjectWindow1 window1 = new(_service)
+        {
+            Owner = this
+        };
+        window1.Show();
 
-        //Views.LocalObjectWindow2 window2 = new(_service)
-        //{
-        //    Owner = this,
-        //    WindowStartupLocation = WindowStartupLocation.Manual,
-        //    Left = 15,
-        //    Top = 15
-        //};
-        //window2.Show();
+        Views.LocalObjectWindow2 window2 = new(_service)
+        {
+            Owner = this,
+            WindowStartupLocation = WindowStartupLocation.Manual,
+            Left = 15,
+            Top = 15
+        };
+        window2.Show();
 
-        //Views.LocalObjectWindow3 window3 = new(_service)
-        //{
-        //    Owner = this,
-        //    WindowStartupLocation = WindowStartupLocation.Manual,
-        //    Left = 15,
-        //    Top = window2.Height + window2.Top + 15
-        //};
-        //window3.Show();
+        Views.LocalObjectWindow3 window3 = new(_service)
+        {
+            Owner = this,
+            WindowStartupLocation = WindowStartupLocation.Manual,
+            Left = 15,
+            Top = window2.Height + window2.Top + 15
+        };
+        window3.Show();
     }
 
     private void BtnLocalMessage_Click(object sender, RoutedEventArgs e)
@@ -111,22 +111,22 @@ public partial class MainWindow : Window
         };
         window1.Show();
 
-        //Views.LocalMessageWindow2 window2 = new(_service)
-        //{
-        //    Owner = this,
-        //    WindowStartupLocation = WindowStartupLocation.Manual,
-        //    Left = 15,
-        //    Top = 15
-        //};
-        //window2.Show();
+        Views.LocalMessageWindow2 window2 = new(_service)
+        {
+            Owner = this,
+            WindowStartupLocation = WindowStartupLocation.Manual,
+            Left = 15,
+            Top = 15
+        };
+        window2.Show();
 
-        //Views.LocalMessageWindow3 window3 = new(_service)
-        //{
-        //    Owner = this,
-        //    WindowStartupLocation = WindowStartupLocation.Manual,
-        //    Left = 15,
-        //    Top = window2.Height + window2.Top + 15
-        //};
-        //window3.Show();
+        Views.LocalMessageWindow3 window3 = new(_service)
+        {
+            Owner = this,
+            WindowStartupLocation = WindowStartupLocation.Manual,
+            Left = 15,
+            Top = window2.Height + window2.Top + 15
+        };
+        window3.Show();
     }
 }

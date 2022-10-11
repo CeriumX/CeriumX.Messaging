@@ -14,105 +14,104 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace CeriumX.Messaging.Appx4WPF.Views
+namespace CeriumX.Messaging.Appx4WPF.Views;
+
+/// <summary>
+/// LocalMessageWindow1.xaml 的交互逻辑
+/// </summary>
+public partial class LocalMessageWindow1 : Window
 {
+    private readonly IMessageService _service;
+
+
     /// <summary>
-    /// LocalMessageWindow1.xaml 的交互逻辑
+    /// <inheritdoc/>
     /// </summary>
-    public partial class LocalMessageWindow1 : Window
+    /// <param name="service"><inheritdoc/></param>
+    public LocalMessageWindow1(IMessageService service)
     {
-        private readonly IMessageService _service;
+        _service = service;
+
+        InitializeComponent();
+    }
 
 
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        /// <param name="service"><inheritdoc/></param>
-        public LocalMessageWindow1(IMessageService service)
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="e"><inheritdoc/></param>
+    protected override void OnInitialized(EventArgs e)
+    {
+        base.OnInitialized(e);
+
+        IMessageHandler<MessageInfo> msgHandler = new MessageHandlerBase<MessageInfo>(async (e) =>
         {
-            _service = service;
-
-            InitializeComponent();
-        }
-
-
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        /// <param name="e"><inheritdoc/></param>
-        protected override void OnInitialized(EventArgs e)
-        {
-            base.OnInitialized(e);
-
-            IMessageHandler<MessageInfo> msgHandler = new MessageHandlerBase<MessageInfo>(async (e) =>
+            await Dispatcher.InvokeAsync(() =>
             {
-                await Dispatcher.InvokeAsync(() =>
+                if (!string.IsNullOrEmpty(e.MessageData?.Message))
                 {
-                    if (!string.IsNullOrEmpty(e.MessageData?.Message))
-                    {
-                        lstMonitor.Items.Insert(0, $"{DateTime.Now:G} 收到消息：{e.MessageData?.Name} - {e.MessageData?.Message}");
-                    }
+                    lstMonitor.Items.Insert(0, $"{DateTime.Now:G} 收到消息：{e.MessageData?.Name} - {e.MessageData?.Message}");
+                }
 
-                    if (lstMonitor.Items.Count > 50)
-                    {
-                        lstMonitor.Items.RemoveAt(lstMonitor.Items.Count - 1);
-                    }
-                });
-            });
-
-            _service.Subscribe(MessageKeys.MSG_TIP_PUBLIC, msgHandler);
-            _service.Subscribe(MessageKeys.MSG_TIP_PRIVATE, msgHandler);
-
-            IMessageHandler<MessagePost> objHandler = new MessageHandlerBase<MessagePost>(async (e) =>
-            {
-                await Dispatcher.InvokeAsync(() =>
+                if (lstMonitor.Items.Count > 50)
                 {
-                    lstMonitor.Items.Insert(0, $"{DateTime.Now:G} 收到对象：{e.MessageData?.Name} - {e.MessageData?.Portrait?.Width}:{e.MessageData?.Portrait?.Height}");
-
-                    if (lstMonitor.Items.Count > 50)
-                    {
-                        lstMonitor.Items.RemoveAt(lstMonitor.Items.Count - 1);
-                    }
-                });
+                    lstMonitor.Items.RemoveAt(lstMonitor.Items.Count - 1);
+                }
             });
+        });
 
-            _service.Subscribe(MessageKeys.MSG_OBJ_PRIVATE, objHandler);
-        }
+        _service.Subscribe(MessageKeys.MSG_TIP_PUBLIC, msgHandler);
+        _service.Subscribe(MessageKeys.MSG_TIP_PRIVATE, msgHandler);
 
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        /// <param name="sender"><inheritdoc/></param>
-        /// <param name="e"><inheritdoc/></param>
-        private void BtnSendMessage_Click(object sender, RoutedEventArgs e)
+        IMessageHandler<MessagePost> objHandler = new MessageHandlerBase<MessagePost>(async (e) =>
         {
-            MessageInfo msgInfo = new()
+            await Dispatcher.InvokeAsync(() =>
             {
-                Name = Environment.CurrentManagedThreadId.ToString(),
-                Message = TxtMessage.Text.Trim()
-            };
+                lstMonitor.Items.Insert(0, $"{DateTime.Now:G} 收到对象：{e.MessageData?.Name} - {e.MessageData?.Portrait?.Width}:{e.MessageData?.Portrait?.Height}");
 
-            _service.SendAsync($"{SltKeyword.SelectedValue}", msgInfo);
-        }
+                if (lstMonitor.Items.Count > 50)
+                {
+                    lstMonitor.Items.RemoveAt(lstMonitor.Items.Count - 1);
+                }
+            });
+        });
 
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        /// <param name="sender"><inheritdoc/></param>
-        /// <param name="e"><inheritdoc/></param>
-        private void BtnSendObject_Click(object sender, RoutedEventArgs e)
+        _service.Subscribe(MessageKeys.MSG_OBJ_PRIVATE, objHandler);
+    }
+
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="sender"><inheritdoc/></param>
+    /// <param name="e"><inheritdoc/></param>
+    private void BtnSendMessage_Click(object sender, RoutedEventArgs e)
+    {
+        MessageInfo msgInfo = new()
         {
-            MessagePost msgPost = new()
-            {
-                Name = Environment.CurrentManagedThreadId.ToString(),
-                Message = TxtMessage.Text.Trim(),
-                Portrait = System.Drawing.Image.FromFile(@"D:\SystemCenter\Pictures\QQ图片20200714134108.png")
+            Name = Environment.CurrentManagedThreadId.ToString(),
+            Message = TxtMessage.Text.Trim()
+        };
 
-                // C:\Users\Forbidden\Pictures\QQ图片20200714134108.png
-                // D:\SystemCenter\Pictures\QQ图片20200714134108.png
-            };
+        _service.SendAsync($"{SltKeyword.SelectedValue}", msgInfo);
+    }
 
-            _service.SendAsync($"{SltKeyword.SelectedValue}", msgPost);
-        }
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
+    /// <param name="sender"><inheritdoc/></param>
+    /// <param name="e"><inheritdoc/></param>
+    private void BtnSendObject_Click(object sender, RoutedEventArgs e)
+    {
+        MessagePost msgPost = new()
+        {
+            Name = Environment.CurrentManagedThreadId.ToString(),
+            Message = TxtMessage.Text.Trim(),
+            Portrait = System.Drawing.Image.FromFile(@"D:\SystemCenter\Pictures\QQ图片20200714134108.png")
+
+            // C:\Users\Forbidden\Pictures\QQ图片20200714134108.png
+            // D:\SystemCenter\Pictures\QQ图片20200714134108.png
+        };
+
+        _service.SendAsync($"{SltKeyword.SelectedValue}", msgPost);
     }
 }

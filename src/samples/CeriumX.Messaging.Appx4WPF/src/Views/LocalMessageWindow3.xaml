@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CeriumX.Messaging.Appx4WPF.Views"
         mc:Ignorable="d"
-        Title="LocalMessageWindow3" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="14"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"   
+        WindowStartupLocation="CenterScreen"
+        Title="LocalMessageWindow3" Height="600" Width="800">
     <Grid>
-        
+        <Border Padding="0,0,0,3" BorderThickness="1" BorderBrush="Black" Background="DimGray">
+            <ScrollViewer>
+                <ListView x:Name="lstMonitor" Foreground="White">
+                </ListView>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </Window>
