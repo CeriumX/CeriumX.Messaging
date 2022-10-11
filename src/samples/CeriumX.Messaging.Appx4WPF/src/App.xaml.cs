@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
-namespace CeriumX.Messaging.Appx4WPF
+namespace CeriumX.Messaging.Appx4WPF;
+
+/// <summary>
+/// Interaction logic for App.xaml
+/// </summary>
+public partial class App : Application
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// <inheritdoc/>
     /// </summary>
-    public partial class App : Application
+    /// <param name="e"><inheritdoc/></param>
+    protected override void OnStartup(StartupEventArgs e)
     {
+        base.OnStartup(e);
     }
 }

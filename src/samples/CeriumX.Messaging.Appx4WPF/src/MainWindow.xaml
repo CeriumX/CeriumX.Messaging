@@ -5,8 +5,209 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CeriumX.Messaging.Appx4WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="14"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        Title="消息队列服务示例" Height="900" Width="1440">
     <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top">
+                <materialDesign:Card Padding="15">
+                    <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}">消息队列服务示例</TextBlock>
+                </materialDesign:Card>
+            </StackPanel>
 
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                <Button x:Name="btnLocalObject" Margin="5"
+                        Content="Open BridgedWindow"
+                        Click="BtnLocalObject_Click"
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                <Button x:Name="btnLocalMessage" Margin="5"
+                        Content="Open LocalMQWindow"
+                        Click="BtnLocalMessage_Click"
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+            </StackPanel>
+
+            <Grid>
+                <Button  Grid.Row="0" Grid.Column="0" Content="窗口1" />
+
+
+                <Button Grid.Row="1" Grid.Column="0" Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                        Content="_LIGHT"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                <Button Grid.Row="1" Grid.Column="1"  Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        ToolTip="Resource name: MaterialDesignRaisedButton"
+                        Content="_MID"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                <Button Grid.Row="1" Grid.Column="2"  Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+                        Content="_DARK"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                <Button Grid.Row="1" Grid.Column="3"  Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignRaisedSecondaryLightButton}"
+                        ToolTip="Resource name: MaterialDesignRaisedSecondaryLightButton"
+                        Content="LIGHT"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                <Button Grid.Row="1" Grid.Column="4"  Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignRaisedSecondaryButton}"
+                        ToolTip="Resource name: MaterialDesignRaisedSecondaryButton"
+                        Content="MID"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                <Button Grid.Row="1" Grid.Column="5"  Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignRaisedSecondaryDarkButton}"
+                        ToolTip="Resource name: MaterialDesignRaisedSecondaryDarkButton"
+                        Content="DARK"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+
+                <Button Grid.Row="2" Grid.Column="0"  Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+                        ToolTip="MaterialDesignFlatLightButton"
+                        Content="LIGHT"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                <Button Grid.Row="2" Grid.Column="1"  Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                        ToolTip="MaterialDesignFlatMidButton"
+                        Content="MID"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                <Button Grid.Row="2" Grid.Column="2"  Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                        ToolTip="MaterialDesignFlatDarkButton"
+                        Content="DARK"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                <Button Grid.Row="2" Grid.Column="3"  Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignFlatSecondaryLightBgButton}"
+                        ToolTip="MaterialDesignFlatSecondaryLightBgButton"
+                        Content="LIGHT"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                <Button Grid.Row="2" Grid.Column="4"  Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignFlatSecondaryMidBgButton}"
+                        ToolTip="MaterialDesignFlatAccentBackgroundButton"
+                        Content="MID"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                <Button Grid.Row="2" Grid.Column="5"  Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignFlatSecondaryDarkBgButton}"
+                        ToolTip="MaterialDesignFlatSecondaryDarkBgButton"
+                        Content="DARK"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+
+                <materialDesign:Badged Badge="3" Grid.Row="3" Grid.Column="0"  Margin="5 0 5 0">
+                    <Button Content="MAIL"
+                            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+                </materialDesign:Badged>
+
+                <materialDesign:Badged Grid.Row="3" Grid.Column="1"  Margin="5 0 5 0"
+                                       Badge="{materialDesign:PackIcon Heart}" BadgeColorZoneMode="SecondaryMid">
+                    <Button Content="LOVE"
+                            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+                </materialDesign:Badged>
+
+                <materialDesign:Badged Grid.Row="3" Grid.Column="2"  Margin="5 0 5 0"
+                                       Badge="DANGER" BadgeColorZoneMode="Dark">
+                    <Button Content="STATUS"
+                            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+                </materialDesign:Badged>
+
+                <materialDesign:Badged Grid.Row="3" Grid.Column="3"  Margin="5 0 5 0"
+                                       x:Name="CountingBadge" BadgeColorZoneMode="PrimaryDark">
+                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Content="CLICK ME!"
+                            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+                </materialDesign:Badged>
+
+                <Button Grid.Row="3" Grid.Column="4"  Margin="5 0 5 0" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="150" ToolTip="Resource name: MaterialDesignRaisedLightButton" ContentStringFormat="OR CLICK ME {0}"
+                        Content="{Binding OrClickMeCount}" Command="{Binding IncrementOrClickMeCountCommand }"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                <Button Grid.Row="3" Grid.Column="5"  Margin="5 0 5 0"
+                        Content="{materialDesign:PackIcon AirplaneTakeoff}" ToolTip="Icon"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+
+                <Button Grid.Row="4" Grid.Column="0"  Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                        ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                        materialDesign:RippleAssist.Feedback="#DD000000"
+                        Content="CUSTOM RIPPLE"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                <Button Grid.Row="4" Grid.Column="1"  Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                        ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+                        materialDesign:RippleAssist.IsDisabled="True"
+                        Content="NO RIPPLE"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+                <RepeatButton Grid.Row="4" Grid.Column="2"  Margin="5 0 5 0"
+                              ToolTip="Resource name: MaterialDesignRaisedButton"
+                              Content="REPEAT"
+                              IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+
+                <Grid Grid.Row="5" Grid.Column="0"  Margin="5 0 5 0">
+                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                            materialDesign:ButtonAssist.CornerRadius="5" ToolTip="MaterialDesignRaisedLightButton with Round Corners"
+                            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                        <TextBlock Text="5/50 Radius" />
+                    </Button>
+                </Grid>
+
+                <Button Grid.Row="5" Grid.Column="1"  Margin="5 0 5 0"
+                        Style="{StaticResource MaterialDesignFloatingActionButton}"
+                        materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                        materialDesign:ButtonProgressAssist.Value="-1"
+                        materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                        Content="{materialDesign:PackIcon DotsHorizontal}"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+
+
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+            </Grid>
+        </DockPanel>
     </Grid>
 </Window>
