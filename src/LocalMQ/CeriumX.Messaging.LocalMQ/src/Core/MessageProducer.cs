@@ -48,7 +48,7 @@ internal sealed class MessageProducer : IAsyncDisposable
     /// <param name="topic">消息主题</param>
     /// <param name="messageData">需要发送的消息(泛型对象)</param>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    internal async ValueTask SendAsync<TMessage>(string topic, TMessage messageData)
+    internal async Task SendAsync<TMessage>(string topic, TMessage messageData)
         where TMessage : class
     {
         bool isDispatchObject = typeof(TMessage).GetInterfaces().Any(p => p.Equals(typeof(IMessageObjectData)));
@@ -74,7 +74,7 @@ internal sealed class MessageProducer : IAsyncDisposable
     /// <param name="topic">消息主题</param>
     /// <param name="messageData">需要发送的消息(字节数组)</param>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    internal async ValueTask SendAsync(string topic, byte[] messageData)
+    internal async Task SendAsync(string topic, byte[] messageData)
     {
         _context.CurrentMessageManager.EnqueueMessage(MessageInfo.Create(topic, messageData));
         await Task.Delay(0).ConfigureAwait(false);

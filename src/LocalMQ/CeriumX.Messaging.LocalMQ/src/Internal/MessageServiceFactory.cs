@@ -38,7 +38,7 @@ internal sealed class MessageServiceFactory : IMessageServiceFactory
     /// </summary>
     /// <param name="options">消息队列创建选项(参数)</param>
     /// <returns>消息队列服务</returns>
-    public async ValueTask<IMessageService> CreateAsync(MessageOptions options)
+    public async Task<IMessageService> CreateAsync(MessageOptions options)
     {
         return await Task.Run(() =>
         {

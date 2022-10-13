@@ -97,7 +97,7 @@ internal sealed class SubscribeManager : IAsyncDisposable
     /// 消息反订阅
     /// </summary>
     /// <param name="messageToken">消息队列订阅令牌</param>
-    private async ValueTask UnSubscribeAsync(IMessageToken messageToken)
+    private async Task UnSubscribeAsync(IMessageToken messageToken)
     {
         IList<IMessageToken>? tokenList = _subscribeList.Values.SingleOrDefault(p => p == messageToken);
 
@@ -119,7 +119,7 @@ internal sealed class SubscribeManager : IAsyncDisposable
     /// </summary>
     /// <param name="msgInfo">内部消息流转实体</param>
     /// <returns>An object that represents the current operation.</returns>
-    internal async ValueTask DispatchMessage(MessageInfo msgInfo)
+    internal async Task DispatchMessage(MessageInfo msgInfo)
     {
         _context.Logger.Debug($"消息投递[Id: {_context.ServiceId}] - {msgInfo.Topic}：{msgInfo.DispatchMessage}");
 

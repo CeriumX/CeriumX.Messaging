@@ -80,7 +80,7 @@ internal sealed class MessageService : IMessageService
     /// <param name="topic">消息主题</param>
     /// <param name="messageData">需要发送的消息(泛型对象)</param>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    public async ValueTask SendAsync<TMessage>(string topic, TMessage messageData)
+    public async Task SendAsync<TMessage>(string topic, TMessage messageData)
         where TMessage : class
         => await _context.CurrentMessageProducer.SendAsync(topic, messageData).ConfigureAwait(false);
 
@@ -90,7 +90,7 @@ internal sealed class MessageService : IMessageService
     /// <param name="topic">消息主题</param>
     /// <param name="messageData">需要发送的消息(字节数组)</param>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    public async ValueTask SendAsync(string topic, byte[] messageData)
+    public async Task SendAsync(string topic, byte[] messageData)
         => await _context.CurrentMessageProducer.SendAsync(topic, messageData).ConfigureAwait(false);
 
     /// <summary>
