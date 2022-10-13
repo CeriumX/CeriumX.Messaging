@@ -27,14 +27,14 @@ namespace CeriumX.Messaging.Abstractions;
 public sealed class MessageHandlerBase<TMessage> : IMessageHandler<TMessage>
     where TMessage : class
 {
-    private readonly Func<MessageReceivedMsgArgs<TMessage>, ValueTask> _handler;
+    private readonly Func<MessageReceivedMsgArgs<TMessage>, Task> _handler;
 
 
     /// <summary>
     /// 消息接收处理基类
     /// </summary>
     /// <param name="callback">消息接收处理回调函数</param>
-    public MessageHandlerBase(Func<MessageReceivedMsgArgs<TMessage>, ValueTask> callback)
+    public MessageHandlerBase(Func<MessageReceivedMsgArgs<TMessage>, Task> callback)
     {
         _handler = callback;
     }
@@ -47,7 +47,7 @@ public sealed class MessageHandlerBase<TMessage> : IMessageHandler<TMessage>
     /// </summary>
     /// <param name="e">消息接收事件参数</param>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    public ValueTask OnReceivedAsync(MessageReceivedMsgArgs<TMessage> e) => _handler.Invoke(e);
+    public Task OnReceivedAsync(MessageReceivedMsgArgs<TMessage> e) => _handler.Invoke(e);
 
     #endregion
 

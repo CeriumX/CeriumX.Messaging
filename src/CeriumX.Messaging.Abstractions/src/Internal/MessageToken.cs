@@ -37,7 +37,7 @@ internal sealed class MessageToken<TMessage> : MessageTokenBase
     /// <summary>
     /// 消息反订阅回调函数
     /// </summary>
-    private readonly Func<IMessageToken, ValueTask> _unsubscribeCallback;
+    private readonly Func<IMessageToken, Task> _unsubscribeCallback;
 
 
     /// <summary>
@@ -46,7 +46,7 @@ internal sealed class MessageToken<TMessage> : MessageTokenBase
     /// <param name="topic">消息主题</param>
     /// <param name="messageHandler">消息接收处理事件</param>
     /// <param name="unsubscribeCallback">消息反订阅回调函数</param>
-    internal MessageToken(string topic, IMessageHandler<TMessage> messageHandler, Func<IMessageToken, ValueTask> unsubscribeCallback)
+    internal MessageToken(string topic, IMessageHandler<TMessage> messageHandler, Func<IMessageToken, Task> unsubscribeCallback)
         : base(topic)
     {
         _messageHandler = messageHandler;
@@ -58,7 +58,7 @@ internal sealed class MessageToken<TMessage> : MessageTokenBase
     /// 反订阅
     /// </summary>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    public override async ValueTask UnSubscribeAsync()
+    public override async Task UnSubscribeAsync()
     {
         if (_unsubscribeCallback is not null)
         {
@@ -71,7 +71,7 @@ internal sealed class MessageToken<TMessage> : MessageTokenBase
     /// </summary>
     /// <param name="info">内部消息流转实体</param>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    internal override async ValueTask OnReceivedAsync(MessageInfo info)
+    internal override async Task OnReceivedAsync(MessageInfo info)
     {
         if (info.DispatchObject is not null)
         {

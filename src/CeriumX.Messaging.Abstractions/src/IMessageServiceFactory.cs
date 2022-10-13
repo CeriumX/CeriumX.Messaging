@@ -30,5 +30,5 @@ public interface IMessageServiceFactory : IAsyncDisposable
     /// </summary>
     /// <param name="options">消息队列创建选项(参数)</param>
     /// <returns>消息队列服务</returns>
-    ValueTask<IMessageService> CreateAsync(MessageOptions options);
+    Task<IMessageService> CreateAsync(MessageOptions options);
 }

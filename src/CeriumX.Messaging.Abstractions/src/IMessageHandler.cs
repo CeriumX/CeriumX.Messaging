@@ -32,5 +32,5 @@ public interface IMessageHandler<TMessage>
     /// </summary>
     /// <param name="e">消息接收事件参数</param>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    ValueTask OnReceivedAsync(MessageReceivedMsgArgs<TMessage> e);
+    Task OnReceivedAsync(MessageReceivedMsgArgs<TMessage> e);
 }

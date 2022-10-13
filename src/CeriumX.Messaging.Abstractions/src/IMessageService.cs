@@ -63,7 +63,7 @@ public interface IMessageService : IAsyncDisposable
     /// <param name="topic">消息主题</param>
     /// <param name="messageData">需要发送的消息(泛型对象)</param>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    ValueTask SendAsync<TMessage>(string topic, TMessage messageData)
+    Task SendAsync<TMessage>(string topic, TMessage messageData)
         where TMessage : class;
 
     /// <summary>
@@ -72,5 +72,5 @@ public interface IMessageService : IAsyncDisposable
     /// <param name="topic">消息主题</param>
     /// <param name="messageData">需要发送的消息(字节数组)</param>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    ValueTask SendAsync(string topic, byte[] messageData);
+    Task SendAsync(string topic, byte[] messageData);
 }

@@ -57,7 +57,7 @@ internal abstract class MessageTokenBase : IMessageToken
     /// 反订阅
     /// </summary>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    public abstract ValueTask UnSubscribeAsync();
+    public abstract Task UnSubscribeAsync();
 
     #endregion
 
@@ -67,5 +67,5 @@ internal abstract class MessageTokenBase : IMessageToken
     /// </summary>
     /// <param name="info">内部消息流转实体</param>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    internal abstract ValueTask OnReceivedAsync(MessageInfo info);
+    internal abstract Task OnReceivedAsync(MessageInfo info);
 }

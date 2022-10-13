@@ -45,5 +45,5 @@ public interface IMessageToken
     /// 反订阅
     /// </summary>
     /// <returns>表示响应当前异步操作的支持对象</returns>
-    ValueTask UnSubscribeAsync();
+    Task UnSubscribeAsync();
 }
