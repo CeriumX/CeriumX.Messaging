@@ -1,9 +1,84 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;net5.0;net6.0;</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<ApplicationIcon>Library.ico</ApplicationIcon>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>CeriumX.Messaging.LocalMQ.CeriumXHost.snk</AssemblyOriginatorKeyFile>
+		<DelaySign>false</DelaySign>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<!--<RootNamespace>CeriumX.Messaging.LocalMQ.CeriumXHost</RootNamespace>
+		<AssemblyName>CeriumX.Messaging.LocalMQ.CeriumXHost</AssemblyName>-->
+		<AssemblyVersion>1.0.1</AssemblyVersion>
+		<FileVersion>1.0.1</FileVersion>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Authors>蟑螂·魂</Authors>
+		<Description>当前封装库为消息队列服务产品中间件LocalMQ(本地化消息队列)实现的扩展库，提供与混合应用主机(CeriumXHost)的交互能力，为混合应用主机注入浏览器的功能支持。
+
+1. 消息队列服务产品中间件，采用面向接口编程，由抽象层和多个实现层共同组成；
+2. 其中增强的服务总线，提供了多种消息队列服务的组网支持，可实现同步收发等多层次的组网需求；
+3. 抽象层定义了统一的API接口，通过集成多种第三方产品的功能实现，使得中间件具备完整的、易用的消息队列服务能力；
+4. 通过接口与实现的分离，增强用户体验，提高开发效率。
+
+- 鄙人专注.Net技术，深入研习.NET 6+系列源码。本库通过长期实践工作积累落地成库，库中提供的所有功能均广泛应用于业务生产环境，同时会不间断地进行功能的优化和完善；
+- 本库均由鄙人采用最新技术实践编码完成，个中艰辛不作过多表述，仅希望世界和平，养家糊口力所能及；
+- 本库可同时满足大、中、小等各式项目的自由支配使用，以提供快捷、便利的工具方法，提升工作效率和业务能力为宗旨。</Description>
+		<Company>华夏银河空间联盟</Company>
+		<Product>消息队列服务产品中间件</Product>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageProjectUrl>https://cockroach888.github.io</PackageProjectUrl>
+		<PackageIcon>PackageIcon.jpg</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/CeriumX/CeriumX.Messaging</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
+		<PackageTags>Messaging MessageQueue 消息队列 消息队列服务 LocalMQ MQTT RabbitMQ Kafka ActiveMQ ZeroMQ ServiceBus</PackageTags>
+		<PackageReleaseNotes>修正对于ValueTask的使用误解，变更为Task的直接异步形态。</PackageReleaseNotes>
+		<Version>$(AssemblyVersion)</Version>
+		<!--<PackageId>CeriumX.Messaging.LocalMQ.CeriumXHost</PackageId>-->
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>embedded</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>none</DebugType>
+		<DebugSymbols>false</DebugSymbols>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\..\..\LICENSE.txt">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\..\..\PackageIcon.jpg">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="README.md">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="NLog" Version="5.0.4" />
+		<PackageReference Include="CommonsUtility" Version="6.5.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\CeriumX.Messaging.Abstractions\src\CeriumX.Messaging.Abstractions.csproj" />
+	</ItemGroup>
 
 </Project>
