@@ -72,13 +72,4 @@
 		</None>
 	</ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="NLog" Version="5.0.4" />
-		<PackageReference Include="CommonsUtility" Version="6.5.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\..\..\CeriumX.Messaging.Abstractions\src\CeriumX.Messaging.Abstractions.csproj" />
-	</ItemGroup>
-
 </Project>
