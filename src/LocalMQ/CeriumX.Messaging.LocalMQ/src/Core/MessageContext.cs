@@ -31,7 +31,7 @@ internal sealed class MessageContext : IAsyncDisposable
     /// <param name="options">消息队列创建选项(参数)</param>
     internal MessageContext(MessageOptions options)
     {
-        string ruleName = options.NLogRulePrefixName is null ? "MessagingMQ" : options.NLogRulePrefixName;
+        string ruleName = options.NLogRulePrefixName is null ? "LocalMQ" : options.NLogRulePrefixName;
         Logger = NLog.LogManager.GetLogger($"{ruleName}.Cockroach.{options.Id ?? ServiceId}");
 
         Logger.Info($"实例化本地化消息队列服务产品中间件上下文对象[Id: {ServiceId}]。");
