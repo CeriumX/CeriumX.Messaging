@@ -42,7 +42,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>Messaging MessageQueue 消息队列 消息队列服务 LocalMQ MQTT RabbitMQ Kafka ActiveMQ ZeroMQ ServiceBus</PackageTags>
-		<PackageReleaseNotes>暂无发布日志。</PackageReleaseNotes>
+		<PackageReleaseNotes>当前封装库为消息队列服务产品中间件的示例应用程序(BlazorServer)，主要用于功能实现的集成测试等。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.Messaging.Appx4BlazorServer</PackageId>-->
 	</PropertyGroup>

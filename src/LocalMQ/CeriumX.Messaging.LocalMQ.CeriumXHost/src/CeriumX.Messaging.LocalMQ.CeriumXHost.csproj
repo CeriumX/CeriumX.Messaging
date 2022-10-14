@@ -12,8 +12,8 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<!--<RootNamespace>CeriumX.Messaging.LocalMQ.CeriumXHost</RootNamespace>
 		<AssemblyName>CeriumX.Messaging.LocalMQ.CeriumXHost</AssemblyName>-->
-		<AssemblyVersion>1.0.1</AssemblyVersion>
-		<FileVersion>1.0.1</FileVersion>
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<FileVersion>1.0.0</FileVersion>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 
@@ -42,7 +42,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>Messaging MessageQueue 消息队列 消息队列服务 LocalMQ MQTT RabbitMQ Kafka ActiveMQ ZeroMQ ServiceBus</PackageTags>
-		<PackageReleaseNotes>修正对于ValueTask的使用误解，变更为Task的直接异步形态。</PackageReleaseNotes>
+		<PackageReleaseNotes>当前封装库为消息队列服务产品中间件LocalMQ(本地化消息队列)实现的扩展库，提供与混合应用主机(CeriumXHost)的交互能力，为混合应用主机注入浏览器的功能支持。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.Messaging.LocalMQ.CeriumXHost</PackageId>-->
 	</PropertyGroup>

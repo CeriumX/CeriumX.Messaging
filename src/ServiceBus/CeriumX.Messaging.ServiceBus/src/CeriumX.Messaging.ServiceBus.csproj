@@ -42,7 +42,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>Messaging MessageQueue 消息队列 消息队列服务 LocalMQ MQTT RabbitMQ Kafka ActiveMQ ZeroMQ ServiceBus</PackageTags>
-		<PackageReleaseNotes>暂无发布日志。</PackageReleaseNotes>
+		<PackageReleaseNotes>当前封装库为消息队列服务产品中间件的服务总线，依托抽象层的统一API接口，通过集成多个第三方接入的功能实现，进行组网操作，使得多种消息队列服务犹如一体，且同个Topic定义亦能面向多种消息队列的收发操作等。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.Messaging.ServiceBus</PackageId>-->
 	</PropertyGroup>

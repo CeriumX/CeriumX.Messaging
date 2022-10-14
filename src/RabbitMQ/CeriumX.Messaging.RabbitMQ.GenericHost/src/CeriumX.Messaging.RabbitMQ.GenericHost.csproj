@@ -42,7 +42,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>Messaging MessageQueue 消息队列 消息队列服务 LocalMQ MQTT RabbitMQ Kafka ActiveMQ ZeroMQ ServiceBus</PackageTags>
-		<PackageReleaseNotes>暂无发布日志。</PackageReleaseNotes>
+		<PackageReleaseNotes>当前封装库为消息队列服务产品中间件第三方RabbitMQ消息队列集成实现的扩展库，提供与通用主机(GenericHost)的交互能力，为通用主机注入浏览器的功能支持。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.Messaging.RabbitMQ.GenericHost</PackageId>-->
 	</PropertyGroup>

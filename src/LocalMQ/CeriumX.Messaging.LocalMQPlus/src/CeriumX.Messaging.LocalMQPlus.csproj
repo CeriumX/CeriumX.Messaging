@@ -42,7 +42,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>Messaging MessageQueue 消息队列 消息队列服务 LocalMQ MQTT RabbitMQ Kafka ActiveMQ ZeroMQ ServiceBus</PackageTags>
-		<PackageReleaseNotes>暂无发布日志。</PackageReleaseNotes>
+		<PackageReleaseNotes>当前封装库为消息队列服务产品中间件的LocalMQPlus(本地化消息队列增强版)实现，LocalMQPlus是在LocalMQ功能迭代的基础上进行了增强扩展；通过行为接口，实现了对象投递的支持，以区别和满足特殊应用场景的需求。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.Messaging.LocalMQPlus</PackageId>-->
 	</PropertyGroup>
