@@ -52,20 +52,32 @@ dotnet sln CRS2TBBT4CeriumX.Messaging.sln add --in-root CeriumX.Messaging.Abstra
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- 消息队列服务总线 ﹫ ServiceBus 1 ----------
+@echo\&echo  ---------- 消息队列服务总线 ﹫ ServiceBus 3 ----------
 
 dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.ServiceBus -o ServiceBus/CeriumX.Messaging.ServiceBus/src
 dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s ServiceBus ServiceBus/CeriumX.Messaging.ServiceBus/src
 
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.ServiceBus.GenericHost -o ServiceBus/CeriumX.Messaging.ServiceBus.GenericHost/src
+dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s ServiceBus ServiceBus/CeriumX.Messaging.ServiceBus.GenericHost/src
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.ServiceBus.CeriumXHost -o ServiceBus/CeriumX.Messaging.ServiceBus.CeriumXHost/src
+dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s ServiceBus ServiceBus/CeriumX.Messaging.ServiceBus.CeriumXHost/src
 
 
+
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- 本地消息队列 ﹫ LocalMQ 2 ----------
+@echo\&echo  ---------- 本地消息队列 ﹫ LocalMQ 4 ----------
 
 dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.LocalMQ -o LocalMQ/CeriumX.Messaging.LocalMQ/src
 dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s LocalMQ LocalMQ/CeriumX.Messaging.LocalMQ/src
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.LocalMQ.GenericHost -o LocalMQ/CeriumX.Messaging.LocalMQ.GenericHost/src
+dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s LocalMQ LocalMQ/CeriumX.Messaging.LocalMQ.GenericHost/src
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.LocalMQ.CeriumXHost -o LocalMQ/CeriumX.Messaging.LocalMQ.CeriumXHost/src
+dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s LocalMQ LocalMQ/CeriumX.Messaging.LocalMQ.CeriumXHost/src
 
 dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.LocalMQPlus -o LocalMQ/CeriumX.Messaging.LocalMQPlus/src
 dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s LocalMQ LocalMQ/CeriumX.Messaging.LocalMQPlus/src
@@ -75,30 +87,48 @@ dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s LocalMQ LocalMQ/CeriumX.Messagi
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- MQTT消息队列 ﹫ MQTT 1 ----------
+@echo\&echo  ---------- MQTT消息队列 ﹫ MQTT 3 ----------
 
 dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.MQTT -o MQTT/CeriumX.Messaging.MQTT/src
 dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s MQTT MQTT/CeriumX.Messaging.MQTT/src
 
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.MQTT.GenericHost -o MQTT/CeriumX.Messaging.MQTT.GenericHost/src
+dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s MQTT MQTT/CeriumX.Messaging.MQTT.GenericHost/src
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.MQTT.CeriumXHost -o MQTT/CeriumX.Messaging.MQTT.CeriumXHost/src
+dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s MQTT MQTT/CeriumX.Messaging.MQTT.CeriumXHost/src
 
 
+
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- RabbitMQ消息队列 ﹫ RabbitMQ 1 ----------
+@echo\&echo  ---------- RabbitMQ消息队列 ﹫ RabbitMQ 3 ----------
 
 dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.RabbitMQ -o RabbitMQ/CeriumX.Messaging.RabbitMQ/src
 dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s RabbitMQ RabbitMQ/CeriumX.Messaging.RabbitMQ/src
 
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.RabbitMQ.GenericHost -o RabbitMQ/CeriumX.Messaging.RabbitMQ.GenericHost/src
+dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s RabbitMQ RabbitMQ/CeriumX.Messaging.RabbitMQ.GenericHost/src
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.RabbitMQ.CeriumXHost -o RabbitMQ/CeriumX.Messaging.RabbitMQ.CeriumXHost/src
+dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s RabbitMQ RabbitMQ/CeriumX.Messaging.RabbitMQ.CeriumXHost/src
 
 
+
 @echo.
 @echo.
 @echo.
-@echo\&echo  ---------- Kafka消息队列 ﹫ Kafka 1 ----------
+@echo\&echo  ---------- Kafka消息队列 ﹫ Kafka 3 ----------
 
 dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.Kafka -o Kafka/CeriumX.Messaging.Kafka/src
 dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s Kafka Kafka/CeriumX.Messaging.Kafka/src
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.Kafka.GenericHost -o Kafka/CeriumX.Messaging.Kafka.GenericHost/src
+dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s Kafka Kafka/CeriumX.Messaging.Kafka.GenericHost/src
+
+dotnet new classlib -lang "C#" -f net6.0 -n CeriumX.Messaging.Kafka.CeriumXHost -o Kafka/CeriumX.Messaging.Kafka.CeriumXHost/src
+dotnet sln CRS2TBBT4CeriumX.Messaging.sln add -s Kafka Kafka/CeriumX.Messaging.Kafka.CeriumXHost/src
 
 
 
