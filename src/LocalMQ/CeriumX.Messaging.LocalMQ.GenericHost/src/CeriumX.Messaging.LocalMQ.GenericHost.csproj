@@ -12,8 +12,8 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<!--<RootNamespace>CeriumX.Messaging.LocalMQ.GenericHost</RootNamespace>
 		<AssemblyName>CeriumX.Messaging.LocalMQ.GenericHost</AssemblyName>-->
-		<AssemblyVersion>1.0.0</AssemblyVersion>
-		<FileVersion>1.0.0</FileVersion>
+		<AssemblyVersion>1.1.0</AssemblyVersion>
+		<FileVersion>1.1.0</FileVersion>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
 
@@ -42,7 +42,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright © Cockroach Soulful, All Rights Reserved.</Copyright>
 		<PackageTags>Messaging MessageQueue 消息队列 消息队列服务 LocalMQ MQTT RabbitMQ Kafka ActiveMQ ZeroMQ ServiceBus</PackageTags>
-		<PackageReleaseNotes>修当前封装库为消息队列服务产品中间件LocalMQ(本地化消息队列)实现的扩展库，提供与通用主机(GenericHost)的交互能力，为通用主机注入浏览器的功能支持。</PackageReleaseNotes>
+		<PackageReleaseNotes>增加消息队列创建选项(参数)传递使用方式。</PackageReleaseNotes>
 		<Version>$(AssemblyVersion)</Version>
 		<!--<PackageId>CeriumX.Messaging.LocalMQ.GenericHost</PackageId>-->
 	</PropertyGroup>

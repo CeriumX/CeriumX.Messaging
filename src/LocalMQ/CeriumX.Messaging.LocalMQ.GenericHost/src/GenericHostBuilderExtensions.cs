@@ -32,6 +32,10 @@ public static class GenericHostBuilderExtensions
     /// <summary>
     /// 集成消息队列服务产品中间件的LocalMQ(本地化消息队列)实现
     /// </summary>
+    /// <remarks>
+    /// <para>1.使用 IServiceProvider 获取 IMessageServiceFactory 服务</para>
+    /// <para>2.await factory.CreateAsync(options).ConfigureAwait(false);</para>
+    /// </remarks>
     /// <param name="hostBuilder">The <see cref="IHostBuilder"/> to configure.</param>
     /// <returns>The same instance of the <see cref="IHostBuilder"/> for chaining.</returns>
     public static IHostBuilder UseMessagingOfLocalMQ(this IHostBuilder hostBuilder)
@@ -40,6 +44,29 @@ public static class GenericHostBuilderExtensions
         {
             IMessageServiceFactory factory = MessageServiceFactoryProvider.Create();
             services.TryAddSingleton(sp => factory);
+        });
+    }
+
+    /// <summary>
+    /// 集成消息队列服务产品中间件的LocalMQ(本地化消息队列)实现
+    /// </summary>
+    /// <remarks>
+    /// <para>1.使用 IServiceProvider 获取 IMessageServiceFactory 服务</para>
+    /// <para>2.await factory.CreateAsync(options).ConfigureAwait(false);</para>
+    /// <para>3.可以直接获取 IMessageService 全局共有服务</para>
+    /// </remarks>
+    /// <param name="hostBuilder">The <see cref="IHostBuilder"/> to configure.</param>
+    /// <param name="options">消息队列创建选项(参数)</param>
+    /// <returns>The same instance of the <see cref="IHostBuilder"/> for chaining.</returns>
+    public static IHostBuilder UseMessagingOfLocalMQ(this IHostBuilder hostBuilder, MessageOptions options)
+    {
+        return hostBuilder.ConfigureServices(async (context, services) =>
+        {
+            IMessageServiceFactory factory = MessageServiceFactoryProvider.Create();
+            IMessageService messaging = await factory.CreateAsync(options).ConfigureAwait(false);
+
+            services.TryAddSingleton(sp => factory);
+            services.TryAddSingleton(sp => messaging);
         });
     }
 }
